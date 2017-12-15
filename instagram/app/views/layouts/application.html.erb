@@ -11,8 +11,12 @@
   <body>
     <nav class="topnav">
       <a href=<%= root_url %>>Home</a>
-      <% if current_user %>
+      <% if user_signed_in? %>
         <a href=<%= new_user_post_url(current_user.id) %>>Post</a>
+        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+      <% else %>
+        <%= link_to('Login', new_user_session_path) %>
+        <%= link_to('Sign-up', new_user_registration_path) %>
       <% end %>
     </nav>
     <p class="notice"><%= notice %></p>
