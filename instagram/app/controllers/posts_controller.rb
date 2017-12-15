@@ -9,7 +9,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
+    @user = User.find(params[:user_id])
+    @post = @user.posts.create(post_params)
     @post.save
     redirect_to root_url
   end
