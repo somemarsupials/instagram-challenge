@@ -9,7 +9,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     @post.save
-    redirect_to '/'
+    redirect_to root_url
   end
 
   private
