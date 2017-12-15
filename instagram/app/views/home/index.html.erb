@@ -1,5 +1,3 @@
-<h1>Monocle</h1>
-
 <% @posts.each do |post| %>
 <div class="post">
   <%= image_tag(post.image.url, alt: 'Image') if post.image? %>
