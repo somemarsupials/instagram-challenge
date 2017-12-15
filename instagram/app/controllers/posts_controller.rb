@@ -9,9 +9,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @user = User.find(params[:user_id])
-    @post = @user.posts.create(post_params)
-    @post.save
+    Post.from_params(params[:user_id], post_params)
     redirect_to root_url
   end
 
