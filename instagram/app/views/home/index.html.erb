@@ -1,7 +1,11 @@
-<% @posts.each do |post| %>
-
-<div class="post">
-  <%= image_tag(post.image.url, class: 'post-img', alt: 'Image') if post.image? %>
-  <h2><%= post.title %></h2> 
+<div class="posts">
+  <% @posts.each do |post| %>
+  <div class="post">
+    <%= image_tag(post.image.url, class: 'post-img', alt: 'Image') if post.image? %>
+    <div class="post-info">
+      <h2 class="title"><%= post.title %></h2> 
+      <p class="user"><%= post.user.email %></p>
+    </div>
+  </div>
+  <% end %>
 </div>
-<% end %>

@@ -9,19 +9,21 @@
   </head>
 
   <body>
-    <nav class="topnav">
-      <a href=<%= root_url %>>Home</a>
+    <ul class="topnav">
+      <li><a class="topnav-title">XP2</a></li>
+      <li><a href=<%= root_url %>>Home</a></li>
       <% if user_signed_in? %>
-        <a href=<%= new_user_post_url(current_user.id) %>>Post</a>
-        <%= link_to('Logout', destroy_user_session_path, method: :delete) %>
+        <li><a href=<%= new_user_post_url(current_user.id) %>>Post</a></li>
+        <li><%= link_to('Logout', destroy_user_session_path, method: :delete) %></li>
       <% else %>
-        <%= link_to('Login', new_user_session_path) %>
-        <%= link_to('Sign-up', new_user_registration_path) %>
+        <li><%= link_to('Login', new_user_session_path) %></li>
+        <li><%= link_to('Sign-up', new_user_registration_path) %></li>
       <% end %>
-    </nav>
+    </ul>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-    <h1>XP2</h1>
-    <%= yield %>
+    <div id="main">
+      <%= yield %>
+    </div>
   </body>
 </html>
