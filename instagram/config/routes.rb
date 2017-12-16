@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  root 'home#index'
   resources :posts, only: [:index], controller: 'posts'
 
   resources :users do
@@ -7,4 +6,5 @@ Rails.application.routes.draw do
   end
 
   devise_for :users
+  root 'posts#index'
 end
