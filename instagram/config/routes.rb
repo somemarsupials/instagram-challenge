@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  devise_for :users
+  root 'home#index'
+  resources :posts, only: [:index], controller: 'posts'
 
   resources :users do
-    resources :posts
+    resources :posts, controller: 'user_posts'
   end
 
-  root 'home#index'
+  devise_for :users
 end
