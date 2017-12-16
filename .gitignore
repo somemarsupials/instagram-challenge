@@ -5,17 +5,18 @@
 #   git config --global core.excludesfile '~/.gitignore_global'
 
 # Ignore bundler config.
-/.bundle
+instagram/.bundle
 
 # Ignore all logfiles and tempfiles.
-/log/*
-/tmp/*
-!/log/.keep
-!/tmp/.keep
+instagram/log/*
+instagram/tmp/*
+instagram!/log/.keep
+instagram!/tmp/.keep
 
-/node_modules
-/yarn-error.log
+instagram/node_modules
+instagram/yarn-error.log
 
-.byebug_history
+instagram/.byebug_history
 
-public/uploads/**/*
+instagram/public/uploads/**/*
+/**/.DS_Store
